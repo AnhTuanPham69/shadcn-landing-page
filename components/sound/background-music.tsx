@@ -30,10 +30,7 @@ const BackgroundMusic = () => {
 
   return (
     <audio ref={audioRef} autoPlay loop>
-      <source
-        src="https://shadcn-landing-page-bay.vercel.app/background-music.mp3"
-        type="audio/mpeg"
-      />
+      <source src="/background-music.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
   );
