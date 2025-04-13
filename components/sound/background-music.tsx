@@ -8,7 +8,7 @@ const BackgroundMusic = () => {
     const audio = audioRef.current;
 
     const tryPlayAudio = () => {
-      if (audio && audio.paused) {
+      if (audio) {
         audio
           .play()
           .then(() => {
@@ -20,11 +20,17 @@ const BackgroundMusic = () => {
       }
     };
 
-    tryPlayAudio();
+    const audioTimeout = setTimeout(() => {
+      tryPlayAudio();
+    }, 100);
+
+    return () => {
+      clearTimeout(audioTimeout);
+    };
   }, [audioRef]);
 
   return (
-    <audio ref={audioRef} autoPlay loop>
+    <audio ref={audioRef} loop>
       <source src="/background-music.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
