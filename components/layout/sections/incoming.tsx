@@ -23,7 +23,7 @@ export const IncomingSection = () => {
       style={{
         background: "url(/background.png) no-repeat",
         backgroundSize: "cover",
-        backgroundPosition: "bottom center",
+        backgroundPosition: "top center",
       }}
     >
       <FallingLeaves />
