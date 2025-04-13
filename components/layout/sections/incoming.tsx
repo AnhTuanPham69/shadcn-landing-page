@@ -9,11 +9,11 @@ export const IncomingSection = () => {
 
   return (
     <section
-      className="w-full h-[1080px] relative"
+      className="w-full h-[100vh] relative"
       style={{
         background: "url(/background.png) no-repeat",
         backgroundSize: "cover",
-        backgroundPosition: "center top",
+        backgroundPosition: "bottom center",
       }}
     >
       <BackgroundMusic />
@@ -25,7 +25,7 @@ export const IncomingSection = () => {
           <Image src={"/logo.png"} alt="" width={188} height={170} />
         </Link>
       </header>
-      <div className="flex w-full justify-center fixed top-[20%] md:top-[12%] animate-jump-in">
+      <div className="flex w-full justify-center fixed top-[20%] md:top-[12%] animate-pulse animate-infinite animate-duration-[6000ms] animate-delay-300">
         <Image
           src={"/headline.png"}
           alt=""
