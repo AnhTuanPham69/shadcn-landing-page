@@ -1,11 +1,11 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const BackgroundMusic = () => {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
   useEffect(() => {
-    const audio = document.getElementById(
-      "auto-play-audio"
-    ) as HTMLAudioElement | null;
+    const audio = audioRef.current;
 
     const tryPlayAudio = () => {
       if (audio && audio.paused) {
@@ -21,10 +21,10 @@ const BackgroundMusic = () => {
     };
 
     tryPlayAudio();
-  }, []);
+  }, [audioRef]);
 
   return (
-    <audio autoPlay loop id="auto-play-audio">
+    <audio ref={audioRef} autoPlay loop>
       <source src="/background-music.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
