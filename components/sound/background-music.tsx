@@ -20,16 +20,6 @@ const BackgroundMusic = () => {
   };
 
   useEffect(() => {
-    const audioTimeout = setTimeout(() => {
-      tryPlayAudio();
-    }, 100);
-
-    return () => {
-      clearTimeout(audioTimeout);
-    };
-  }, [audioRef]);
-
-  useEffect(() => {
     // Play on first click anywhere on the document
     document.addEventListener("click", tryPlayAudio, { once: true });
 
