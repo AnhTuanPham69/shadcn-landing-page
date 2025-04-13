@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br" suppressHydrationWarning>
+    <html translate="no" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-background", montserrat.className)}>
         <ThemeProvider
           attribute="class"
