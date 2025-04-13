@@ -8,7 +8,7 @@ const BackgroundMusic = () => {
     const audio = audioRef.current;
 
     const tryPlayAudio = () => {
-      if (audio && audio.paused) {
+      if (audio) {
         audio
           .play()
           .then(() => {
@@ -21,7 +21,7 @@ const BackgroundMusic = () => {
     };
 
     // Trigger play on first user click
-    window.addEventListener("click", tryPlayAudio, { once: true });
+    window.addEventListener("click", tryPlayAudio);
 
     return () => {
       window.removeEventListener("click", tryPlayAudio);
