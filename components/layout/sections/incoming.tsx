@@ -66,7 +66,7 @@ export const IncomingSection = () => {
         />
       </div>
 
-      <div className="flex flex-col fixed right-[3%] bottom-[5%] z-10 gap-3">
+      <div className="flex flex-col fixed right-[1%] bottom-[5%] z-10 gap-3">
         <ContactForn />
         <button
           className="right-[3%] top-[27px] flex items-center bg-[#27685c] rounded-full text-white text-nowrap p-4 font-medium w-[50px] h-[50px]"
