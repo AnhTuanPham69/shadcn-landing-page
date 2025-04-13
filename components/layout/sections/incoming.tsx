@@ -1,14 +1,12 @@
 "use client";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
-import { Navbar } from "../navbar";
+import BackgroundMusic from "@/components/sound/background-music";
 
 export const IncomingSection = () => {
   const { theme } = useTheme();
+
   return (
     <section
       className="w-full h-[1080px] relative"
@@ -18,6 +16,7 @@ export const IncomingSection = () => {
         backgroundPosition: "center top",
       }}
     >
+      <BackgroundMusic />
       <header className="w-full flex justify-start bg-transparent top-5 mx-auto sticky z-40">
         <Link
           href="/"

@@ -3,12 +3,14 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/layout/theme-provider";
-import BackgroundMusic from "@/components/sound/background-music";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Shadcn - Landing template",
-  description: "Landing template from Shadcn",
+  title: "Essensia Parkway",
+  description: "Tiên Phong Kiến Tạo Chuẩn Sống Lux - Well tại Nam Sài Gòn",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -17,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html translate="no" suppressHydrationWarning>
+    <html lang="vn" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-background", montserrat.className)}>
         <ThemeProvider
           attribute="class"
@@ -25,9 +27,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="opacity-0">
-            <BackgroundMusic />
-          </div>
           {children}
         </ThemeProvider>
       </body>
