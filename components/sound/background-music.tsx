@@ -4,23 +4,22 @@ import { useEffect, useRef } from "react";
 const BackgroundMusic = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  useEffect(() => {
+  const tryPlayAudio = () => {
     const audio = audioRef.current;
 
-    const tryPlayAudio = () => {
-      if (audio) {
-        console.log("🚀 ~ tryPlayAudio ~ audio:", audio);
-        audio
-          .play()
-          .then(() => {
-            console.log("Audio playing");
-          })
-          .catch((err) => {
-            console.warn("Autoplay prevented:", err);
-          });
-      }
-    };
+    if (audio) {
+      audio
+        .play()
+        .then(() => {
+          console.log("Audio playing");
+        })
+        .catch((err) => {
+          console.warn("Autoplay prevented:", err);
+        });
+    }
+  };
 
+  useEffect(() => {
     const audioTimeout = setTimeout(() => {
       tryPlayAudio();
     }, 100);
@@ -29,6 +28,15 @@ const BackgroundMusic = () => {
       clearTimeout(audioTimeout);
     };
   }, [audioRef]);
+
+  useEffect(() => {
+    // Play on first click anywhere on the document
+    document.addEventListener("click", tryPlayAudio, { once: true });
+
+    return () => {
+      document.removeEventListener("click", tryPlayAudio);
+    };
+  }, []);
 
   return (
     <audio ref={audioRef} autoPlay loop>
