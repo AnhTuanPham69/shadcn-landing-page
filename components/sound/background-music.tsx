@@ -8,6 +8,7 @@ const BackgroundMusic = () => {
     const audio = audioRef.current;
 
     const tryPlayAudio = () => {
+      console.log("🚀 ~ tryPlayAudio ~ audio:", audio);
       if (audio) {
         audio
           .play()
