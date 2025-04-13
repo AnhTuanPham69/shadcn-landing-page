@@ -2,11 +2,11 @@
 import { useEffect } from "react";
 
 const BackgroundMusic = () => {
-  const audio = document.getElementById(
-    "auto-play-audio"
-  ) as HTMLAudioElement | null;
-
   useEffect(() => {
+    const audio = document.getElementById(
+      "auto-play-audio"
+    ) as HTMLAudioElement | null;
+
     const tryPlayAudio = () => {
       if (audio && audio.paused) {
         audio
@@ -21,7 +21,7 @@ const BackgroundMusic = () => {
     };
 
     tryPlayAudio();
-  }, [audio]);
+  }, []);
 
   return (
     <audio autoPlay loop id="auto-play-audio">
