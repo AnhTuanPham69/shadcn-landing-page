@@ -20,21 +20,21 @@ export const IncomingSection = () => {
       <header className="w-full flex justify-start bg-transparent top-5 mx-auto sticky z-40">
         <Link
           href="/"
-          className="font-bold text-lg flex items-center absolute left-[5%] top-[27px] w-[10%]"
+          className="font-bold text-lg flex items-center absolute left-[5%] top-[27px] w-[20%] md:w-[10%]"
         >
           <Image src={"/logo.png"} alt="" width={188} height={170} />
         </Link>
       </header>
-      <div className="flex w-full justify-center fixed top-[12%] animate-jump-in">
+      <div className="flex w-full justify-center fixed top-[20%] md:top-[12%] animate-jump-in">
         <Image
           src={"/headline.png"}
           alt=""
           width={1452}
           height={326}
-          className="w-[40%]"
+          className="w-[80%] md:w-[40%]"
         />
       </div>
-      <div className="fixed left-[3%] bottom-[5%] animate-bounce">
+      <div className="fixed left-[3%] bottom-[5%] animate-bounce z-10">
         <Image
           src={"/hotline.png"}
           alt=""
